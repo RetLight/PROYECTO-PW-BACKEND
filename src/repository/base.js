@@ -34,21 +34,22 @@ class RepositoryBase {
         }
     }
 
-    update =  async(object) => {
-        const { id } = object;
+    update = async (object) => {
+        const { id, ...updateValues } = object;
         try {
-            const result = await this.modelo.update({ where: { id } })
-            if (result) {
-                result.set(object)
-                result.save()
+            const [numAffectedRows] = await this.modelo.update(updateValues, { where: { id } });
+    
+            if (numAffectedRows === 0) {
+                return null; // Ningún registro encontrado para actualizar
             }
-            return result;
-        }
-        catch(err) {
+    
+            return await this.modelo.findByPk(id); // Retorna el registro actualizado
+        } catch(err) {
             console.error(err);
             return null;
         }
     }
+    
 
     remove = async (id) => {
         try {

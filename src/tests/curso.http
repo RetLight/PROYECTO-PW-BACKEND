@@ -1,15 +1,26 @@
-GET https://renzot-2023-prograweb-as-api.azurewebsites.net/reserva
+GET https://renzot-2023-prograweb-as-api.azurewebsites.net/libro
 
 ######
 
-POST https://jcromaina-20232-prograweb-as-api.azurewebsites.net/curso
+PUT https://renzot-2023-prograweb-as-api.azurewebsites.net/libro
 Content-Type: application/json
 
 {
-    "nombre": "Programación Orientada a Objetos",
-    "creditos": 5,
-    "idCarrera": 1
-}
+    "id": 2,
+    "formato": "Libro físico",
+    "autor": "Flores Masias, Eward; Huarote Zegarra, Raul",
+    "editorial": "Fondo editorial universidad césar vallejo",
+    "categoria": "Ingenieria",
+    "anio": 2019,
+    "idioma": "Español",
+    "nro_paginas": 128,
+    "isbn13": "9786124435058",
+    "portada_url": "https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg",
+    "titulo": "Gestion de proyecto de Software",
+    "estado": "Disponible",
+    "createdAt": "2023-11-29T21:30:00.000Z",
+    "updatedAt": "2023-11-29T21:30:00.000Z"
+  }
 
 #####
 
